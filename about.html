@@ -1,0 +1,332 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   About Me Vincensius
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #5a7f9e;
+    color: white;
+  }
+  nav {
+    background-color: #335a8a;
+    border-bottom: 2px solid #6a8db0;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 32px;
+  }
+  nav ul li {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  main {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .photo-container {
+    background-color: #13408a;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .photo-container img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+  }
+  .text-content {
+    max-width: 600px;
+  }
+  .text-content h2 {
+    margin: 0 0 4px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #d9985a;
+  }
+  .text-content h3 {
+    margin: 0 0 12px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: white;
+  }
+  .text-content h3 .highlight {
+    color: #e6004c;
+  }
+  .text-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 600px;
+  }
+  footer {
+    margin-top: 60px;
+  }
+  .booking-bar {
+    background-color: #0a2a3a;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .booking-bar span {
+    display: block;
+    color: white;
+  }
+  .footer-main {
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 20px 40px 20px;
+    font-size: 14px;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 150px;
+    margin-bottom: 20px;
+  }
+  .footer-logo img {
+    width: 32px;
+    height: 32px;
+  }
+  .footer-logo span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .footer-head-office {
+    flex: 1 1 220px;
+    margin-bottom: 20px;
+  }
+  .footer-head-office h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #f9d71c;
+    margin: 0 0 8px 0;
+  }
+  .footer-head-office p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .footer-links {
+    flex: 1 1 160px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #f9d71c;
+    line-height: 1.4;
+  }
+  
+  .footer-links span {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-contact {
+    flex: 1 1 180px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .footer-contact span {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-social {
+    flex: 1 1 120px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .footer-social img {
+    width: 20px;
+    height: 20px;
+  }
+  @media (max-width: 720px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .text-content {
+      max-width: 100%;
+    }
+    .footer-main {
+      font-size: 13px;
+      padding: 20px 10px 30px 10px;
+    }
+    .footer-logo, .footer-head-office, .footer-links, .footer-contact, .footer-social {
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .footer-social {
+      justify-content: center;
+    }
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+  color: #f9d71c;
+  border-bottom: 2px solid #f9d71c;
+  padding-bottom: 2px;
+}
+</style>
+ </head>
+ <body>
+  <nav>
+   <ul>
+    <li>
+     <a href="artandahomeprofil.html">
+      HOME
+     </a>
+    </li>
+    <li>
+    <a href="artandaabout.html" class="active">
+      ABOUT
+      </a>
+    </li>
+    <li>
+     <a href="artandaeksperiens.html">
+      EXPERIENCE
+     </a>
+    </li>
+    <li>
+     <a href="artandaskill.html">
+      SKILL
+     </a>
+    </li>
+    <li>
+     <a href="artandasertifikat.html">
+      CERTIFICATE
+     </a>
+    </li>
+    <li>
+     <a href="artandaprofil.html">
+      CONTACT
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <main>
+   <div class="photo-container">
+    <img alt="ft salma" height="160" src="image/artd ft.jpg" width="160"/>
+   </div>
+   <div class="text-content">
+    <h2>
+     ABOUT ME
+    </h2>
+    <h3>
+     HELLO,
+     <span class="highlight">
+      I’m Vincensius Artanda
+     </span>
+    </h3>
+    <p>
+     I am a student at SMK Negeri 1 Ngleok majoring in Computer and Network Engineering. I like learning about IT, especially in the fields of Web Developer and System Administration. I started the world of IT by studying System Administrator, namely Linux. After that I continued by studying Networking, namely MikroTik. Until now I am learning about Web Developer.
+    </p>
+   </div>
+  </main>
+  <footer>
+   <div class="booking-bar">
+    <span>
+     Booking Servis Online,
+    </span>
+    <span>
+     Tanpa Ribet
+    </span>
+   </div>
+   <div class="footer-main">
+    <div class="footer-logo">
+     <img alt="Icon of a motorcycle with green and red colors" height="32" src="https://storage.googleapis.com/a1aa/image/6d611ac9-0466-4663-31f1-306e9335a9d0.jpg" width="32"/>
+     <span>
+      EJM
+     </span>
+    </div>
+    <div class="footer-head-office">
+     <h4>
+      Head office
+     </h4>
+     <p>
+      Ds. Kendalrejo, Dsn. Pantimulyo
+      <br/>
+      RT04/RW03, Kec.Talun,Kab.Blitar
+     </p>
+    </div>
+    <div class="footer-links">
+      <span>
+        <a href="bagiannya zura.html">LAYANAN &amp; FASILITAS</a>
+      </span>
+      <span>
+        <a href="relilin sukucadang.html">SUKU CADANG</a>
+      </span>
+      <span>
+        <a href="index.html">HOME</a>
+      </span>
+      <span>
+        <a href="soffireservasi.html">RESERVASI</a>
+      </span>
+    </div>
+    <div class="footer-contact">
+      <span>
+        Hubungi Kami
+      </span>
+      <span>
+        <a href="mailto:Layanan@EJM.com">Layanan@EJM.com</a>
+      </span>
+      <span>
+        <a href="tel:(+62)82228608073">(+62)85785457239</a>
+      </span>
+    </div>
+    <div class="footer-social">
+     <img alt="Instagram icon" height="20" src="https://storage.googleapis.com/a1aa/image/6e2bc530-7506-4479-d98f-006d2e246209.jpg" width="20"/>
+     <img alt="WhatsApp icon" height="20" src="https://storage.googleapis.com/a1aa/image/34648333-b62d-4868-ac92-13c779677d7a.jpg" width="20"/>
+     <img alt="YouTube icon" height="20" src="https://storage.googleapis.com/a1aa/image/e5e7c9e4-a9eb-4fb1-5bd1-707c8541e992.jpg" width="20"/>
+     <img alt="Facebook icon" height="20" src="https://storage.googleapis.com/a1aa/image/81aede00-2606-4ca4-92d8-9c4ce3e9d6c1.jpg" width="20"/>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

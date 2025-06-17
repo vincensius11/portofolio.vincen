@@ -1,0 +1,570 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Skill Artanda
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    body {
+      background-color: #577a9a;
+      color: white;
+      line-height: 1.4;
+    }
+
+    nav {
+      background-color: #3a5a85;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover,
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-skill {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-skill h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      border-bottom: 3px solid #2a3e6a;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .skill-layout {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .profile-photo {
+      flex: 1 1 250px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid #2a3e6a;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-photo img:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    .skill-container {
+      flex: 2 1 600px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .skill-box {
+      background: #3a5a85;
+      border-radius: 8px;
+      padding: 1.5rem 1.2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    }
+
+    .skill-box img {
+      height: 36px;
+      margin-bottom: 0.8rem;
+      filter: brightness(0) invert(1);
+      object-fit: contain;
+    }
+
+    .skill-box h4 {
+      margin-bottom: 0.8rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.03em;
+    }
+
+    .skill-box ul {
+      font-size: 0.9rem;
+      padding-left: 1.2rem;
+      list-style-type: disc;
+      color: #d0d7e0;
+    }
+
+    .skill-box ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-top {
+      background-color: #0f2a3a;
+      color: white;
+      font-size: 12px;
+      padding: 6px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .footer-top .booking-text {
+      font-weight: 700;
+    }
+
+    .footer-top .location-text {
+      font-weight: 400;
+    }
+
+    .footer-main {
+      background-color: #0a0a0a;
+      color: white;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px 40px 20px;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 40px;
+      font-size: 12px;
+      line-height: 1.3;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-main > div {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .footer-main .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-main .logo-section img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .footer-main .head-office {
+      color: #f0d86a;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .footer-main .head-office + p {
+      margin: 0;
+    }
+
+    .footer-main .yellow-list strong {
+      color: #f0d86a;
+      font-weight: 700;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-main .yellow-list ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .footer-main .yellow-list ul li {
+      margin-bottom: 6px;
+    }
+
+    .footer-main .contact-section strong {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .footer-main .contact-section p {
+      margin: 4px 0;
+    }
+
+    .footer-main .social-icons {
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+      justify-content: flex-start;
+    }
+
+    .footer-main .social-icons a {
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .footer-main .social-icons a:hover {
+      color: #f0d86a;
+    }
+
+    @media (max-width: 1024px) {
+      .skill-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-main {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        text-align: center;
+      }
+      .footer-main > div {
+        min-width: 250px;
+        flex: 1 1 250px;
+      }
+      .footer-main .social-icons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        font-size: 12px;
+        padding: 8px 0;
+      }
+      nav a {
+        margin: 0 10px;
+      }
+      .skill-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .skill-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+
+      .profile-photo {
+        margin-bottom: 2rem;
+      }
+    }
+  nav a.active,
+  nav a:hover {
+  color: #f9d71c;
+  border-bottom: 2px solid #f9d71c;
+  padding-bottom: 2px;
+}
+  </style>
+ </head>
+ <body>
+  <nav>
+   <a href="artandahomeprofil.html">
+    HOME
+   </a>
+   <a href="artandaabout.html">
+    ABOUT
+   </a>
+   <a href="artandaeksperiens.html">
+    EXPERIENCE
+   </a>
+   <a href="artandaskill.html" class="active">
+    skill
+    </a>  
+   <a href="artandasertifikat.html">
+    CERTIFICATE
+   </a>
+  </nav>
+  <main>
+   <section aria-label="Skills section" class="section-skill">
+    <div class="skill-layout">
+     <div class="profile-photo">
+      <img alt="ft salma" height="200" src="image/artd ft.jpg" width="200"/>
+     </div>
+     <div class="skill-container">
+      <div aria-label="Debian skills" class="skill-box">
+       <img alt="Debian logo red swirl icon" src="https://storage.googleapis.com/a1aa/image/def4afb8-0d09-4d5b-ddcb-b014ecc8c4a3.jpg"/>
+       <h4>
+        Debian
+       </h4>
+       <ul>
+        <li>
+         Installing and configuring Debian
+        </li>
+        <li>
+         Linux file system and basic CLI commands (ls, cd, rm, cp, mv)
+        </li>
+        <li>
+         Package management (apt, dpkg)
+        </li>
+        <li>
+         User and permission management (chmod, chown, umask)
+        </li>
+        <li>
+         Network configuration (static IP, DHCP, SSH, firewall)
+        </li>
+        <li>
+         Process and service management (systemctl, journalctl)
+        </li>
+        <li>
+         Web server setup (Apache, Nginx)
+        </li>
+       </ul>
+      </div>
+      <div aria-label="MikroTik skills" class="skill-box">
+       <img alt="MikroTik logo black text with blue dot icon" src="https://storage.googleapis.com/a1aa/image/2b1f0f1e-6876-4f47-b841-b333ac6a8892.jpg"/>
+       <h4>
+        MikroTik
+       </h4>
+       <ul>
+        <li>
+         Introduction to MikroTik RouterOS and Winbox
+        </li>
+        <li>
+         Basic IP addressing and subnetting
+        </li>
+        <li>
+         DHCP server and client configuration
+        </li>
+        <li>
+         PPP (username, pptp, l2tp forwarding)
+        </li>
+        <li>
+         Firewall and security filtering
+        </li>
+        <li>
+         Bandwidth management (Queue, QoS)
+        </li>
+        <li>
+         Wireless and hotspot configuration
+        </li>
+        <li>
+         SNMP, VPN
+        </li>
+       </ul>
+      </div>
+      <div aria-label="HTML skills" class="skill-box">
+       <img alt="HTML icon with orange and black text" src="https://storage.googleapis.com/a1aa/image/1231f74b-ce83-4ef6-f810-ba96cd712f58.jpg"/>
+       <h4>
+        HTML
+       </h4>
+       <ul>
+        <li>
+         Basic Structure of HTML
+        </li>
+        <li>
+         Headings, paragraphs, and text formatting
+        </li>
+        <li>
+         Lists (ordered and unordered)
+        </li>
+        <li>
+         Links and navigation
+        </li>
+        <li>
+         Images and multimedia
+        </li>
+        <li>
+         Forms and form validation
+        </li>
+        <li>
+         Tables and data representation
+        </li>
+        <li>
+         Semantic HTML
+        </li>
+       </ul>
+      </div>
+      <div aria-label="JavaScript skills" class="skill-box">
+       <img alt="JavaScript icon yellow text on black background" src="https://storage.googleapis.com/a1aa/image/9f52cf7a-bed0-4786-9343-3cd5b6e0aceb.jpg"/>
+       <h4>
+        JavaScript
+       </h4>
+       <ul>
+        <li>
+         Basic JavaScript Syntax
+        </li>
+        <li>
+         JavaScript core structure
+        </li>
+        <li>
+         Variable declarations
+        </li>
+        <li>
+         DOM manipulation
+        </li>
+        <li>
+         Arithmetic Functions
+        </li>
+        <li>
+         Decentralized function naming (Fungsi () )
+        </li>
+        <li>
+         New control and Loop Structure
+        </li>
+       </ul>
+      </div>
+      <div aria-label="Google Docs and Sheets skills" class="skill-box">
+       <img alt="Google G logo multi-color icon" src="https://storage.googleapis.com/a1aa/image/fb38056b-ea18-418e-937e-cfe5b73abc29.jpg"/>
+       <h4>
+        Google Docs &amp; Sheets
+       </h4>
+       <ul>
+        <li>
+         Using Google Docs, Sheets, and Slides for Productivity
+        </li>
+        <li>
+         Email management with Gmail (filter, label, autoresponder, add-ons)
+        </li>
+        <li>
+         Set Schedule and Collaboration with Google Calendar
+        </li>
+        <li>
+         Share and manage files on Google Drive
+        </li>
+        <li>
+         Creating Forms and Survey with Google Form
+        </li>
+        <li>
+         Using Google Meet for Online Meeting
+        </li>
+       </ul>
+      </div>
+      <div aria-label="CSS skills" class="skill-box">
+       <img alt="CSS icon blue text on white background" src="https://storage.googleapis.com/a1aa/image/773be3d4-d9e3-448f-a880-dda0a3d9bd74.jpg"/>
+       <h4>
+        CSS
+       </h4>
+       <ul>
+        <li>
+         CSS selector (Element Selector, Selector ID, Class selector, Attribute Selector, Combination Selector)
+        </li>
+        <li>
+         Box CSS Properties (color &amp; background, Text &amp; Typography, Layout &amp; Box Model, Display &amp; Positioning, Responsiveness &amp; Media Queries)
+        </li>
+        <li>
+         CSS Variables &amp; Custom Properties
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <div aria-label="Booking service and location" class="footer-top" role="contentinfo">
+   <span class="booking-text">
+    Booking Servis Online,
+   </span>
+   <span class="location-text">
+    Tampa Ribet
+   </span>
+  </div>
+  <footer aria-label="Footer main content" class="footer-main" role="contentinfo">
+   <div>
+    <div aria-label="EJM logo and text" class="logo-section">
+     <img alt="EJM logo with colorful icon" height="40" src="https://storage.googleapis.com/a1aa/image/9b885de2-ba62-4444-7c09-3231aff17a50.jpg" width="40"/>
+     <span>
+      EJM
+     </span>
+    </div>
+   </div>
+   <div>
+    <div class="head-office">
+     Head office
+    </div>
+    <p>
+     Ds. Kendalrejo, Dsn. Pantimulyo
+     <br/>
+     RT04/RW03, Kec.Talun, Kab.Blitar
+    </p>
+   </div>
+   <div aria-label="Services and information" class="yellow-list">
+    <strong>
+      LAYANAN &amp; FASILITAS
+    </strong>
+    <ul>
+      <li>
+        <a href="relilin sukucadang.html">SUKU CADANG</a>
+      </li>
+      <li>
+        <a href="index.html">HOME</a>
+      </li>
+      <li>
+        <a href="soffireservasi.html">RESERVASI</a>
+      </li>
+    </ul>
+  </div>
+  <div aria-label="Contact information" class="contact-section">
+    <strong>
+      Hubungi Kami
+    </strong>
+    <p>
+      <a href="mailto:Layanan@EJM.com">Layanan@EJM.com</a>
+    </p>
+    <p>
+      <a href="tel:(+62)85785457239">(+62)85785457239</a>
+    </p>
+  </div>
+    <div aria-label="Social media links" class="social-icons">
+     <a aria-label="Instagram" href="#">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="Facebook" href="#">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+     <a aria-label="YouTube" href="#">
+      <i class="fab fa-youtube">
+      </i>
+     </a>
+     <a aria-label="Email" href="#">
+      <i class="fas fa-envelope">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

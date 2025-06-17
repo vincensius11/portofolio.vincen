@@ -1,0 +1,258 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Vincensius Artanda Putra
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #1a2a3a;
+  }
+  nav {
+    background-color: #3a5a8a;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+  }
+  nav a {
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 18px;
+    letter-spacing: 1px;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  .container {
+    min-height: calc(100vh - 48px);
+    background: radial-gradient(circle at top left, #8eaed3 0%, #1a2a3a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .content-wrapper {
+    max-width: 900px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 220px 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+  .left-section {
+    color: black;
+    text-align: center;
+  }
+  .left-section h2 {
+    font-weight: 900;
+    font-size: 18px;
+    margin: 0;
+    color: black;
+    letter-spacing: 0.5px;
+  }
+  .left-section h3 {
+    font-weight: 900;
+    font-size: 18px;
+    margin: 6px 0 10px 0;
+    color: black;
+    letter-spacing: 0.5px;
+  }
+  .underline {
+    width: 100px;
+    height: 3px;
+    background-color: black;
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    box-shadow: 0 0 6px 1px rgba(255 255 255 / 0.15);
+    transition: box-shadow 0.3s ease;
+  }
+  .social-icons a:hover {
+    box-shadow: 0 0 8px 2px rgba(255 255 255 / 0.4);
+  }
+  .social-icons a i {
+    font-size: 18px;
+    color: white;
+  }
+  .center-section {
+    border: 6px solid #0a1a2a;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 220px;
+    height: 220px;
+    box-shadow: 0 0 12px 2px rgba(0 0 0 / 0.4);
+    justify-self: center;
+  }
+  .center-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .right-section {
+    color: white;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: left;
+  }
+  .right-section .intro-label {
+    font-weight: 700;
+    font-size: 13px;
+    color: #d49a5a;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .right-section .hello-text {
+    font-weight: 900;
+    font-size: 18px;
+    margin: 0 0 6px 0;
+  }
+  .right-section .hello-text .pink {
+    color: #d91a5a;
+  }
+  .right-section p {
+    margin: 0;
+    font-weight: 400;
+  }
+  @media (max-width: 720px) {
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .left-section, .right-section {
+      text-align: center;
+      width: 100%;
+    }
+    .right-section {
+      font-size: 13px;
+    }
+  }
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(1.05);
+    border-radius: 40%;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 50%;
+  }
+}
+
+/* Navigasi aktif dan hover */
+nav a {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0 18px;
+  letter-spacing: 1px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav a.active {
+  background-color: #d91a5a;
+}
+  </style>
+ </head>
+ <body>
+  <nav>
+    <a href="artandahomeprofil.html" class="active">
+    HOME
+   </a>
+   <a href="artandaabout.html">
+    ABOUT
+   </a>
+   <a href="artandaeksperiens.html">
+    EXPERIENCE
+   </a>
+   <a href="artandaskill.html">
+    SKILL
+   </a>
+   <a href="artandasertifikat.html">
+    CERTIFICATE
+   </a>
+  </nav>
+  <div class="container" role="main">
+   <div class="content-wrapper">
+    <div aria-label="Name and social media links" class="left-section">
+     <h2>
+      vincensius artanda
+     </h2>
+     <h3>
+      putra •
+     </h3>
+     <div class="underline"></div>
+     <div class="social-icons">
+      <a aria-label="Instagram profile link" href="#" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      <a aria-label="YouTube channel link" href="#" style="background: #ff0000;">
+       <i class="fab fa-youtube">
+       </i>
+      </a>
+      <a aria-label="Gmail link" href="#" style="background: #d14836;">
+       <i class="fas fa-envelope">
+       </i>
+      </a>
+     </div>
+    </div>
+    <div class="center-section">
+     <img alt="foto salma" height="220" src="image/artd ft.jpg" width="220"/>
+    </div>
+    <div aria-label="Introduction text" class="right-section">
+     <div class="intro-label">
+      INTRODUCTION
+     </div>
+     <h1 class="hello-text">
+      HELLO,
+      <span class="pink">
+       I'm vincensius
+      </span>
+     </h1>
+     <p>
+      I'm a student from SMKN 1 NGLEGOK
+      <br/>
+      i majored in Computer Network Engineering
+     </p>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

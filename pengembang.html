@@ -1,0 +1,532 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   EJM Team Page
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   * {
+    box-sizing: border-box;
+   }
+   body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #7a99a9;
+    color: white;
+   }
+   a {
+    color: inherit;
+    text-decoration: none;
+   }
+   .topbar {
+    background-color: #052a3a;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+   }
+   .topbar a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+   }
+   .topbar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+   }
+   header {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+   }
+   .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   }
+   .header-left img.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+   }
+   .header-left .ejm-text {
+    font-weight: 700;
+    font-size: 24px;
+    color: black;
+    position: relative;
+    padding-bottom: 5px;
+   }
+   .header-left .ejm-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: #f7d600;
+   }
+   .header-left .search-circle {
+    background-color: #f7d600;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .header-left .search-circle i {
+    font-size: 24px;
+    color: black;
+   }
+   nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+   }
+   nav a {
+    font-weight: 700;
+    font-size: 14px;
+    color: black;
+    text-transform: uppercase;
+    white-space: nowrap;
+   }
+
+   main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+   }
+
+   .team-member {
+    text-align: center;
+    font-family: sans-serif;
+   }
+
+   .circle-bg-blue,
+   .circle-bg-darkblue,
+   .circle-bg-red {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .circle-bg-blue {
+    background-color: #00aaff;
+   }
+
+   .circle-bg-darkblue {
+    background-color: #003366;
+   }
+
+   .circle-bg-red {
+    background-color: #ff4444;
+   }
+
+   img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+   }
+
+   img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+   }
+
+   footer {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 30px 20px 40px;
+    font-size: 12px;
+    max-width: 1200px;
+    margin: 100px auto 0; /* tambahkan margin-top */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+   }
+
+   .footer-left, .footer-center, .footer-right {
+    flex: 1 1 250px;
+   }
+   .footer-left {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+   }
+   .footer-left img.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+   }
+   .footer-left .ejm-text {
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    position: relative;
+    padding-bottom: 5px;
+    margin-top: 0;
+   }
+   .footer-left .ejm-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: #f7d600;
+   }
+   .footer-left .head-office {
+    margin-left: 10px;
+    max-width: 300px;
+   }
+   .footer-left .head-office h3 {
+    color: #f7d600;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+   }
+   .footer-left .head-office p {
+    margin: 0;
+    line-height: 1.3;
+    color: white;
+   }
+   .footer-center {
+    font-weight: 700;
+    color: #f7d600;
+    font-size: 13px;
+    line-height: 1.4;
+   }
+   .footer-center span {
+    display: block;
+    margin-bottom: 6px;
+   }
+   .footer-right {
+    font-size: 12px;
+    line-height: 1.4;
+   }
+   .footer-right p {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+   }
+   .footer-right .social-icons {
+    display: flex;
+    gap: 10px;
+   }
+   .footer-right .social-icons a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+   }
+   .footer-right .social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+   }
+   @media (max-width: 600px) {
+    nav {
+     justify-content: center;
+     gap: 15px;
+     margin-top: 10px;
+     width: 100%;
+    }
+    nav a {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #f7d600; /* Warna underline */
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #f7d600; /* Warna teks saat hover */
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+    header {
+     justify-content: center;
+     gap: 15px;
+    }
+    .footer-left, .footer-center, .footer-right {
+     flex: 1 1 100%;
+     text-align: center;
+    }
+    .footer-left {
+     flex-direction: column;
+     align-items: center;
+    }
+    .footer-left .head-office {
+     margin-left: 0;
+     max-width: 100%;
+     margin-top: 10px;
+    }
+   }
+   .search-form {
+ display: flex;
+ align-items: center;
+}
+
+.search-input {
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ margin-left: 10px;
+ font-family: 'Montserrat', sans-serif;
+}
+
+.search-input:focus {
+ outline: none;
+ border-color: #f7d600;
+ box-shadow: 0 0 5px rgba(247, 214, 0, 0.5);
+}
+
+.header-left .search-circle {
+ cursor: pointer; /* Ubah kursor menjadi pointer */
+}
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="header-left">
+    <img alt="EJM logo with motorcycle and text" class="logo" height="50" src="image/logoo.png" width="50"/>
+    <div class="ejm-text">
+     EJM
+    </div>
+    <form action="/hasil-pencarian" method="get" class="search-form">
+      <div aria-label="Search" class="search-circle">
+       <i aria-hidden="true" class="fas fa-search">
+       </i>
+      </div>
+      <input type="text" name="q" placeholder="Cari..." class="search-input">
+      <button type="submit" style="display: none;">Cari</button>
+     </form>
+   </div>
+   <nav>
+    <a href="index.html">
+     HOME
+    </a>
+    <a href="bagiannya zura.html">
+     LAYANAN &amp; FASILITAS
+    </a>
+    <a href="relilin sukucadang.html">
+     SUKU CADANG
+    </a>
+    <a href="soffireservasi.html">
+     RESERVASI
+    </a>
+    <a href="randyulasan.html">
+     ULASAN
+    </a>
+    <a href="artandaprofil.html">
+     PENGEMBANG
+    </a>
+   </nav>
+  </header>
+  <main>
+    <div class="team-member">
+     <a href="relilinprof.html">
+      <div class="circle-bg-blue">
+       <img alt="Relilin Tanofebri H." src="image/ft relilin.jpg"/>
+      </div>
+     </a>
+     Relilin Tanofebri H.
+    </div>
+   
+    <div class="team-member">
+     <a href="salmaaulia1home.html">
+      <div class="circle-bg-darkblue">
+       <img alt="Salma Aulia Rahma" src="image/ft salma.jpg"/>
+      </div>
+     </a>
+     Salma Aulia Rahma
+    </div>
+   
+    <div class="team-member">
+     <a href="soffiprof1home.html">
+      <div class="circle-bg-blue">
+       <img alt="Soffi Rizkyana Putri" src="image/ft sopi.jpg"/>
+      </div>
+     </a>
+     Soffi Rizkyana Putri
+    </div>
+   
+    <div class="team-member">
+     <a href="artandahomeprofil.html">
+      <div class="circle-bg-red" style="background-color:#d35a2a;">
+       <img alt="Vincensius Artanda P." src="image/artd ft.jpg"/>
+      </div>
+     </a>
+     Vincensius Artanda P.
+    </div>
+   
+    <div class="team-member">
+     <a href="main-profile-zura.html">
+      <div class="circle-bg-red">
+       <img alt="Zhura Elysia Fazira" src="image/ft zura.jpg"/>
+      </div>
+     </a>
+     Zhura Elysia Fazira
+    </div>
+   
+    <div class="team-member">
+     <a href="randyhomeprofil.html">
+      <div class="circle-bg-red" style="background-color:#d35a2a;">
+       <img alt="Randy Pratama" src="image/ft randy.jpg"/>
+      </div>
+     </a>
+     Randy Pratama
+    </div>
+   </main>
+  <footer>
+   <div class="footer-left">
+    <img alt="EJM logo with motorcycle icon" class="footer-logo-img" height="40" src="image/logoo.png" width="40"/>
+    <div class="footer-logo-container">
+     <span class="footer-logo-text">
+      EJM
+     </span>
+     <div class="footer-head-office">
+      <h3>
+       Head office
+      </h3>
+      <p>
+       Ds. Kendalrejo, Dsn. Pantimulyo
+       <br/>
+       RT04/RW03, Kec.Talun, Kab.Blitar
+      </p>
+     </div>
+    </div>
+   </div>
+   <div aria-label="Footer navigation links" class="footer-center">
+    <span>
+     <a href="bagiannya zura.html">LAYANAN &amp; FASILITAS</a>
+    </span>
+    <span>
+     <a href="relilin sukucadang.html">SUKU CADANG</a>
+    </span>
+    <span>
+     <a href="index.html">HOME</a>
+    </span>
+    <span>
+     <a href="soffireservasi.html">RESERVASI</a>
+    </span>
+   </div>
+   <div aria-label="Contact information and social media" class="footer-right">
+    <p>
+     <strong>
+      Hubungi Kami
+     </strong>
+    </p>
+    <p class="contact-email">
+     Layanan@EJM.com
+    </p>
+    <p>
+     (+62)85785457239
+    </p>
+    <div class="social-icons">
+     <a aria-label="Instagram" class="instagram" href="#">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="WhatsApp" class="whatsapp" href="https://wa.wizard.id/c467e7">
+      <i class="fab fa-whatsapp">
+      </i>
+     </a>
+     <a aria-label="Gmail" class="gmail" href="mailto:vincensius.artanda@gmail.com">
+      <i class="fas fa-envelope">
+      </i>
+     </a>
+     <a aria-label="YouTube" class="youtube" href="#">
+      <i class="fab fa-youtube">
+      </i>
+     </a>
+     <a aria-label="Facebook" class="facebook" href="#">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   const teamMembers = document.querySelectorAll('.team-member .circle-bg-blue, .team-member .circle-bg-darkblue, .team-member .circle-bg-red');
+
+   teamMembers.forEach(member => {
+    const img = member.querySelector('img');
+    member.addEventListener('mouseover', () => {
+     img.style.transform = 'scale(1.1)';
+     img.style.transition = 'transform 0.3s ease-in-out';
+    });
+    member.addEventListener('mouseout', () => {
+     img.style.transform = 'scale(1)';
+     img.style.transition = 'transform 0.3s ease-in-out';
+    });
+   });
+   const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        link.style.transform = 'scale(1.05)';
+        link.style.transition = 'transform 0.2s ease-in-out';
+    });
+
+    link.addEventListener('mouseout', () => {
+        link.style.transform = 'scale(1)';
+        link.style.transition = 'transform 0.2s ease-in-out';
+    });
+});
+const searchCircle = document.querySelector('.header-left .search-circle');
+const searchForm = document.querySelector('.search-form');
+const searchInput = document.querySelector('.search-input');
+
+console.log('searchCircle:', searchCircle);
+console.log('searchForm:', searchForm);
+console.log('searchInput:', searchInput);
+
+if (searchCircle && searchForm && searchInput) {
+    searchCircle.addEventListener('click', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        console.log('Query:', query); // Tambahkan ini untuk melihat nilai query
+
+        if (query === 'home' || query === 'beranda') {
+            console.log('Mengarah ke salmahome.html'); // Tambahkan ini
+            window.location.href = 'salmahome.html';
+        } else if (query === 'reservasi' || query === 'booking') {
+            window.location.href = 'soffireservasi.html';
+        } else if (query === 'suku cadang' || query === 'sparepart') {
+            window.location.href = '#suku-cadang';
+        } else if (query === 'ulasan' || query === 'review') {
+            window.location.href = '#ulasan';
+        } else {
+            searchForm.submit();
+        }
+    });
+}
+
+  </script>
+ </body>
+</html>
